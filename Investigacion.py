@@ -172,16 +172,8 @@ if __name__ == '__main__':
              '7': ['6', '8'],
              '8': []}
 
-    
-
-    g1 = crearGrafoDfS(graph, "6", 1)
-    print()
-    print()
-    print(g1.edges)
-    #graficarG(g1, 1, "Examen")
-
     #Grafica el grafo de casa despues de aplicar bfs y dfs
-    # casaBFS = crearGrafoBfS(casa,"Entrada", 0)
-    # graficarG(casaBFS, 0, "Grafo de Casa con BFS")
-    # casaDFS = crearGrafoDfS(casa,"Entrada", 0)
-    # graficarG(casaDFS, 0, "Grafo de Casa con DFS")
+    casaBFS = crearGrafoBfS(casa,"Entrada", 0)
+    graficarG(casaBFS, 0, "Grafo de Casa con BFS")
+    casaDFS = crearGrafoDfS(casa,"Entrada", 0)
+    graficarG(casaDFS, 0, "Grafo de Casa con DFS")
