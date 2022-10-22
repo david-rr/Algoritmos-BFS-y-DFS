@@ -1,8 +1,25 @@
 # Algoritmos-BFS-y-DFS
 Implementación de los algoritmos de búsqueda en un grafo no dirigido. 
-El programa genera una visualización del grafo de entrada y posteriormente muestra el resultante al aplicar los algoritmos de busqueda para generar el camino más corto hacia un nodo.
+El programa genera una visualización del grafo de entrada y posteriormente muestra el resultante al aplicar los algoritmos de busqueda para generar el camino más corto hacia un nodo. Usando la siguiente función obtenemos el camino:
 
+``` python
+def shortest_pathbfs(g, start, end):
+    parents = {}
+    for parent, child in bfs(g, start):
+        parents[child] = parent
+        if child == end:
+            revpath = [end]
+            while True:
+                parent = parents[child]
+                revpath.append(parent)
+                if parent == start:
+                    break
+                child = parent
+            return list(reversed(revpath))
+    return None
+```
 
+Representacion de las conexiones existentes en la casa.
 
 ![image of home](https://user-images.githubusercontent.com/116386764/197304478-4690db01-d7d7-43a3-a283-57caa34af5f1.png)
 
