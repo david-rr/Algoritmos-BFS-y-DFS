@@ -19,6 +19,20 @@ def shortest_pathbfs(g, start, end):
     return None
 ```
 
+Para la parte grafica se hace uso de la libreria networkx la cual nos permite trabajar con grafos y matplotlib para dibujar los nodos y aristas con la siguiente función:
+``` python
+def graficarG(g, flag, titulo):
+    pos = nx.shell_layout(g)
+    print(g.edges)
+    if(flag == 1):
+        labels = nx.get_edge_attributes(g, 'weight')
+        nx.draw_networkx_edge_labels(g,pos,edge_labels=labels)
+    nx.draw(g, pos, with_labels=True, node_color='gray', font_weight='bold', font_color='purple')
+    plt.title(titulo)
+    plt.show()
+```
+
+
 Representacion de las conexiones existentes en la casa.
 
 ![image of home](https://user-images.githubusercontent.com/116386764/197304478-4690db01-d7d7-43a3-a283-57caa34af5f1.png)
